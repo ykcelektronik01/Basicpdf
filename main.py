@@ -11,7 +11,8 @@ for index,row in datas.iterrows():
     pdf.set_font(family="Times", style="B", size=24)
     pdf.cell(w=0, h=24, txt=row["Topic"], align="L", ln=1, border=0)
     pdf.line(10, 27, 200, 27)
-
+    for i in range(row["Pages"]-1):
+        pdf.add_page()
 
 
 pdf.output("output.pdf")
